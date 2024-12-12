@@ -5,7 +5,7 @@
 
 variable "main-region" {
   type    = string
-  default = "us-west-2"
+  default = "us-east-1"
 }
 
 
@@ -15,7 +15,7 @@ variable "main-region" {
 
 variable "cluster_name" {
   type    = string
-  default = "dominion-cluster"
+  default = "baliketech-cluster"
 }
 
 variable "rolearn" {
@@ -72,11 +72,11 @@ variable "env_name" {
 # AWS SSO Variables
 ################################################################################
 
-# variable "sso_admin_group_id" {
-#   description = "AWS_SSO Admin Group ID"
-#   type        = string
-#   sensitive   = true
-#   default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
-# }
+variable "sso_admin_group_id" {
+  description = "AWS_SSO Admin Group ID"
+  type        = string
+  sensitive   = true
+  default     = "b4f8f4f8-e011-7046-0637-993dc10edd76"
+}
 
 

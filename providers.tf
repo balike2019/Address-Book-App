@@ -1,7 +1,7 @@
 
 provider "aws" {
-  region = us-west-2
-  alias  = "us-west-2"
+  region = us-east-1
+  alias  = "us-east-1"
 }
 
 provider "kubernetes" {
@@ -29,12 +29,14 @@ provider "helm" {
 
 provider "helm" {
 
-  alias = "dominion-cluster"
+  alias = "baliketech-cluster"
   kubernetes {
     host                   = module.eks.cluster_endpoint
     cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
     token                  = data.aws_eks_cluster_auth.cluster-auth.token
-    load_config_file       = false
+#load_config_file       = false  // load_config_file = false:
+#Disables loading the local kubeconfig file. This setting is useful when you want to avoid relying on a local kubeconfig file, instead passing in all credentials and configuration directly.
+
   }
 }
 

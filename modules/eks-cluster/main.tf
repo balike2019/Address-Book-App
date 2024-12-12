@@ -46,12 +46,12 @@ module "eks" {
     node-group-01 = {
       min_size     = 1
       max_size     = 10
-      desired_size = 3
+      desired_size = 1
     }
     node-group-02 = {
       min_size     = 1
       max_size     = 10
-      desired_size = 3
+      desired_size = 1
 
       instance_types = ["t3.large"]
       capacity_type  = "SPOT"
@@ -65,7 +65,7 @@ module "eks" {
   aws_auth_roles = [
     {
       rolearn  = var.rolearn
-      username = "fusi"
+      username = "balike"
       groups   = ["system:masters"]
     },
   ]

@@ -65,17 +65,17 @@ module "prometheus" {
 
 
 
-# # ################################################################################
-# # # VPC Endpoints for Prometheus and Grafana Module
-# # ################################################################################
+# ################################################################################
+# # VPC Endpoints for Prometheus and Grafana Module
+# ################################################################################
 
-# module "vpcendpoints" {
-#   source                    = "./modules/vpcendpoints"
-#   env_name                  = var.env_name
-#   main-region               = var.main-region
-#   vpc_id                    = module.vpc.vpc_id
-#   private_subnets           = module.vpc.private_subnets
-#   grafana_security_group_id = module.managed_grafana.security_group_id
-# }
+module "vpcendpoints" {
+  source                    = "./modules/vpcendpoints"
+  env_name                  = var.env_name
+  main-region               = var.main-region
+  vpc_id                    = module.vpc.vpc_id
+  private_subnets           = module.vpc.private_subnets
+  grafana_security_group_id = module.managed_grafana.security_group_id
+}
 
 

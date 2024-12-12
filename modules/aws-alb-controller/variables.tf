@@ -13,6 +13,7 @@ variable "env_name" {
 
 variable "cluster_name" {
   type = string
+  default = "baliketech-cluster"
 }
 
 ################################################################################
